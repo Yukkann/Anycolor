@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANYCOLOR 股價 × 新聞互動分析</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>ANYCOLOR 股價 × 新聞互動分析</h1>
+        <p>觀察股價走勢，並結合重大新聞事件進行解讀</p>
+    </header>
+
+    <main class="container">
+        <section class="chart-panel">
+            <canvas id="stockChart"></canvas>
+        </section>
+
+        <aside class="info-panel">
+            <div id="eventCard" class="event-card empty">
+                <h2>事件資訊</h2>
+                <p>請點擊圖上的事件節點，或點下方時間軸的查看詳情。</p>
+            </div>
+        </aside>
+    </main>
+
+    <section class="timeline-section">
+        <h2>事件時間軸</h2>
+        <div id="timeline"></div>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
