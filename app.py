@@ -14,6 +14,24 @@ def load_events():
         return json.load(f)
 
 
+def load_stock_history():
+    stock = yf.download(
+        "5032.T",
+        start="2024-01-01",
+        end="2027-01-01",
+        auto_adjust=False,
+        progress=False,
+    )
+
+    dates = stock.index.strftime("%Y-%m-%d").tolist()
+    close_prices = stock["Close"].ffill().tolist()
+
+    return {
+        "dates": dates,
+        "prices": close_prices,
+    }
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -21,15 +39,11 @@ def index():
 
 @app.route("/api/data")
 def get_data():
-    stock = yf.download("5032.T", period="6mo", auto_adjust=False)
-
-    dates = stock.index.strftime("%Y-%m-%d").tolist()
-    prices = stock["Close"].ffill().tolist()
-
+    stock_data = load_stock_history()
     return jsonify(
         {
-            "dates": dates,
-            "prices": prices,
+            "dates": stock_data["dates"],
+            "prices": stock_data["prices"],
             "events": load_events(),
         }
     )

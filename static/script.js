@@ -93,7 +93,7 @@ fetch("/api/data")
                 labels: data.dates,
                 datasets: [
                     {
-                        label: "ANYCOLOR 股價",
+                        label: "ANYCOLOR 歷史股價（2024～2026）",
                         data: data.prices,
                         borderWidth: 2,
                         tension: 0.2
