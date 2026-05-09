@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "date": "2026-03-11",
+    "title": "FY2026 Q3 財報公布",
+    "category": "earnings",
+    "summary": "ANYCOLOR 公布 FY2026 Q3 財報，營收與獲利成長。",
+    "description": "公司公布 FY2026 Q3 財報，投資人通常會觀察營收、營業利益、淨利與管理層展望。這是影響股價的重要事件之一。",
+    "impact": "positive",
+    "source_name": "ANYCOLOR IR",
+    "source_url": "https://example.com/q3-report",
+    "related_price_date": "2026-03-11",
+    "tags": ["財報", "營收", "獲利"],
+    "importance": 5
+  },
+  {
+    "id": 2,
+    "date": "2026-04-01",
+    "title": "新歌曲與企劃發布",
+    "category": "product",
+    "summary": "公司發布新企劃與原創曲，增加粉絲關注度。",
+    "description": "新歌曲與內容企劃屬於 IP 娛樂公司重要的內容供給事件，雖然不像財報那樣直接反映財務數字，但可能影響市場對品牌活力的看法。",
+    "impact": "neutral",
+    "source_name": "Official News",
+    "source_url": "https://example.com/song-release",
+    "related_price_date": "2026-04-01",
+    "tags": ["新歌", "企劃", "內容"],
+    "importance": 3
+  },
+  {
+    "id": 3,
+    "date": "2026-04-10",
+    "title": "大型活動舉辦",
+    "category": "concert",
+    "summary": "大型活動與演出有助於提高品牌聲量與活動收入。",
+    "description": "活動是 VTuber 娛樂公司的重要收入來源之一。大型活動前後，市場可能重新評估公司變現能力與粉絲熱度。",
+    "impact": "positive",
+    "source_name": "Official Event",
+    "source_url": "https://example.com/event-info",
+    "related_price_date": "2026-04-10",
+    "tags": ["活動", "演唱會", "品牌"],
+    "importance": 4
+  }
+]
