@@ -15,6 +15,13 @@
 
     <main class="container">
         <section class="chart-panel">
+            <div class="chart-controls">
+                <div class="chart-tabs" id="chartTabs">
+                    <button type="button" data-range="30d" class="active">30 天</button>
+                    <button type="button" data-range="6m">6 個月</button>
+                    <button type="button" data-range="all">全部</button>
+                </div>
+            </div>
             <canvas id="stockChart"></canvas>
         </section>
 

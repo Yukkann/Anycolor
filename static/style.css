@@ -66,12 +66,66 @@ body {
     margin: 0 0 8px 0;
 }
 
-.timeline-content button {
+.timeline-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.timeline-actions button,
+.timeline-actions .timeline-link {
     margin-top: 8px;
-    padding: 8px 12px;
+    padding: 8px 14px;
     border: none;
     border-radius: 8px;
     background: #2f3e63;
     color: white;
+    text-decoration: none;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-actions .timeline-link {
+    background: #4c83ff;
+}
+
+.timeline-actions button:hover,
+.timeline-actions .timeline-link:hover {
+    opacity: 0.95;
+}
+
+.chart-controls {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 18px;
+}
+
+.chart-tabs {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.chart-tabs button {
+    padding: 10px 16px;
+    border: 1px solid #c1c7d0;
+    border-radius: 999px;
+    background: white;
+    color: #2f3e63;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chart-tabs button.active {
+    background: #2f3e63;
+    color: white;
+    border-color: #2f3e63;
+}
+
+.chart-tabs button:hover {
+    background: #2f3e63;
+    color: white;
 }

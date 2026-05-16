@@ -23,12 +23,23 @@ def load_stock_history():
         progress=False,
     )
 
-    dates = stock.index.strftime("%Y-%m-%d").tolist()
-    close_prices = stock["Close"].ffill().tolist()
+    if stock.empty or "Close" not in stock:
+        return {
+            "dates": [],
+            "prices": [],
+        }
+
+    close_prices = stock["Close"].ffill()
+    if hasattr(close_prices, "columns"):
+        close_prices = close_prices["5032.T"] if "5032.T" in close_prices else close_prices.iloc[:, 0]
+
+    close_prices = close_prices.dropna()
+    dates = close_prices.index.strftime("%Y-%m-%d").tolist()
+    prices = [round(float(price), 2) for price in close_prices.tolist()]
 
     return {
         "dates": dates,
-        "prices": close_prices,
+        "prices": prices,
     }
 
 
@@ -50,4 +61,4 @@ def get_data():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)

@@ -37,7 +37,19 @@ python app.py
 
 - <http://127.0.0.1:5000/>
 
-## 3) 常見問題
+## 3) 放到網上（Render）
+
+這個專案已經包含 Render 需要的 `Procfile` 和 `render.yaml`。
+
+1. 把專案 push 到 GitHub。
+2. 到 <https://render.com/> 新增 `Blueprint` 或 `Web Service`。
+3. 選這個 GitHub repo。
+4. Build Command 使用 `pip install -r requirements.txt`。
+5. Start Command 使用 `gunicorn app:app`。
+
+部署完成後，Render 會提供一個公開網址。
+
+## 4) 常見問題
 
 - 如果出現 `ModuleNotFoundError: No module named 'flask'`
   - 代表你還沒安裝套件，請先執行 `pip install -r requirements.txt`
